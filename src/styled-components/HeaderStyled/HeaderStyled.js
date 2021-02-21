@@ -8,7 +8,7 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
-  background-color: var(--slack-color);
+  background-color: #350e36;
   color: white;
 `;
 
@@ -28,6 +28,8 @@ const HeaderLeft = styled.div`
 const HeaderAvatar = styled(Avatar)`
   cursor: pointer;
   margin-right: 20px;
+  z-index: -1;
+  position: "absolute";
   :hover {
     opacity: 0.8;
   }
@@ -66,6 +68,20 @@ const HeaderRight = styled.div`
     margin-left: 10px;
     margin-right: auto;
     cursor: pointer;
+  }
+
+  > div {
+    display: "flex";
+    flex-direction: "row";
+    justify-content: "flex-end";
+  }
+
+  > div > svg {
+    z-index: 999;
+    right: 13px;
+    position: absolute;
+    top: 31px;
+    color: #30ac76;
   }
 `;
 

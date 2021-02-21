@@ -19,6 +19,7 @@ const SidebarHeader = styled.div`
   display: flex;
   border-bottom: 1px solid #49274b;
   padding: 13px;
+  align-items: center;
 
   > .MuiSvgIcon-root {
     padding: 8px;

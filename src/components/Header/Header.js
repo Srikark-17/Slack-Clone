@@ -11,6 +11,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -26,11 +27,14 @@ const Header = () => {
       </HeaderSearch>
       <HeaderRight>
         <HelpOutlineIcon />
-        <HeaderAvatar
-          onClick={() => auth.signOut()}
-          src={user?.photoURL}
-          alt={user?.displayName}
-        />
+        <div>
+          <HeaderAvatar
+            onClick={() => auth.signOut()}
+            src={user?.photoURL}
+            alt={user?.displayName}
+          />
+          <FiberManualRecordIcon />
+        </div>
       </HeaderRight>
     </HeaderContainer>
   );

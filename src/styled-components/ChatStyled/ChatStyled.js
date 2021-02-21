@@ -12,6 +12,9 @@ const Header = styled.div`
   justify-content: space-between;
   padding: 20px;
   border-bottom: 1px solid #d3d3d3;
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
 `;
 
 const HeaderLeft = styled.div`

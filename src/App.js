@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Chat from "./components/Chat/Chat";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
           <AppBody>
             <Sidebar />
             <Switch>
-              <Route exact path="/"></Route>
+              <Route exact path="/">
+                <Chat />
+              </Route>
             </Switch>
           </AppBody>
         </>

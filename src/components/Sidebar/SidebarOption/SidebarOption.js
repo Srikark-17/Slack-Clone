@@ -1,9 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import styled from "styled-components";
 import Swal from "sweetalert2";
 import { db } from "../../../firebase";
 import { enterRoom } from "../../../redux/appSlice";
+import {
+  SidebarOptionContainer,
+  SidebarOptionChannel,
+} from "../../../styled-components/SidebarStyled/SidebarOptionStyled/SidebarOptionStyled";
 
 const SidebarOption = ({ Icon, title, addChannelOption, id }) => {
   const dispatch = useDispatch();
@@ -30,7 +33,7 @@ const SidebarOption = ({ Icon, title, addChannelOption, id }) => {
     });
   };
 
-  const setChannel = () => {
+  const selectChannel = () => {
     if (id) {
       dispatch(
         enterRoom({
@@ -42,7 +45,7 @@ const SidebarOption = ({ Icon, title, addChannelOption, id }) => {
 
   return (
     <SidebarOptionContainer
-      onClick={addChannelOption ? addChannel : setChannel}
+      onClick={addChannelOption ? addChannel : selectChannel}
     >
       {Icon && <Icon fontSize="small" style={{ padding: 10 }} />}
       {Icon ? (
@@ -57,29 +60,3 @@ const SidebarOption = ({ Icon, title, addChannelOption, id }) => {
 };
 
 export default SidebarOption;
-
-const SidebarOptionContainer = styled.div`
-  display: flex;
-  font-size: 12px;
-  align-items: center;
-  padding-left: 2px;
-  cursor: pointer;
-
-  :hover {
-    opacity: 0.9;
-    background-color: #340e36;
-  }
-
-  > h3 {
-    font-weight: 500;
-  }
-
-  > h3 > span {
-    padding: 15px;
-  }
-`;
-
-const SidebarOptionChannel = styled.h3`
-  padding: 10px 0;
-  font-weight: 300;
-`;

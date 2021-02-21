@@ -20,8 +20,8 @@ const Login = () => {
           alt="Slack Logo"
         />
         <div>
-          <h1>Sign in to the PAPA FAM</h1>
-          <p>papa.slack.com</p>
+          <h1>Sign in to Srikar Kusumanchi</h1>
+          <p>srikar.slack.com</p>
         </div>
         <Button type="submit" onClick={signIn}>
           Sign In With Google

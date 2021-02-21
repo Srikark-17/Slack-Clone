@@ -27,6 +27,7 @@ const HeaderLeft = styled.div`
 
 const HeaderAvatar = styled(Avatar)`
   cursor: pointer;
+  margin-right: 20px;
   :hover {
     opacity: 0.8;
   }
@@ -59,11 +60,11 @@ const HeaderSearch = styled.div`
 const HeaderRight = styled.div`
   flex: 0.3;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 
   > svg {
-    margin-left: auto;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: auto;
     cursor: pointer;
   }
 `;

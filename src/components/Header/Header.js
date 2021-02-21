@@ -18,11 +18,6 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderLeft>
-        <HeaderAvatar
-          onClick={() => auth.signOut()}
-          src={user?.photoURL}
-          alt={user?.displayName}
-        />
         <AccessTimeIcon />
       </HeaderLeft>
       <HeaderSearch>
@@ -31,6 +26,11 @@ const Header = () => {
       </HeaderSearch>
       <HeaderRight>
         <HelpOutlineIcon />
+        <HeaderAvatar
+          onClick={() => auth.signOut()}
+          src={user?.photoURL}
+          alt={user?.displayName}
+        />
       </HeaderRight>
     </HeaderContainer>
   );

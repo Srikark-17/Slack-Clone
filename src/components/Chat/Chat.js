@@ -46,8 +46,8 @@ const Chat = () => {
             <HeaderLeft>
               <h4>
                 <strong>#{roomDetails?.data().name}</strong>
+                <StarBorderOutlinedIcon />
               </h4>
-              <StarBorderOutlinedIcon />
             </HeaderLeft>
             <HeaderRight>
               <p>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 const MessageContainer = styled.div`
   display: flex;
   align-items: center;
+  z-index: -1;
   padding: 20px;
   > img {
     height: 50px;

@@ -23,9 +23,10 @@ const HeaderLeft = styled.div`
     text-transform: lowercase;
     margin-right: 10px;
   }
-  > h4 > .MuiSvgIcon-root {
+  > h4 > svg {
     margin-left: 10px;
     font-size: 18px;
+    cursor: pointer;
   }
 `;
 
@@ -36,9 +37,10 @@ const HeaderRight = styled.div`
     font-size: 14px;
   }
 
-  > p > .MuiSvgIcon-root {
+  > p > svg {
     margin-right: 5px !important;
     font-size: 16px;
+    cursor: pointer;
   }
 `;
 

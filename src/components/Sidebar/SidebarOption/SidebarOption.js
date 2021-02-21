@@ -1,10 +1,45 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import Swal from "sweetalert2";
+import { db } from "../../../firebase";
+import { enterRoom } from "../../../redux/appSlice";
 
-const SidebarOption = ({ Icon, title, addChannelOption }) => {
-  const addChannel = () => {};
+const SidebarOption = ({ Icon, title, addChannelOption, id }) => {
+  const dispatch = useDispatch();
 
-  const setChannel = () => {};
+  const addChannel = () => {
+    Swal.fire({
+      title: "Channel Name",
+      text: "Enter the channel name",
+      input: "text",
+      showCancelButton: true,
+    }).then((channelName) => {
+      if (channelName.value) {
+        db.collection("rooms").add({
+          name: channelName.value,
+        });
+        Swal.fire(
+          "Thank you!",
+          `The channel ${channelName.value} is now created!`,
+          "success"
+        );
+      } else {
+        Swal.fire("Error", "You did not enter the channel name", "error");
+      }
+    });
+  };
+
+  const setChannel = () => {
+    if (id) {
+      dispatch(
+        enterRoom({
+          roomId: id,
+        })
+      );
+    }
+  };
+
   return (
     <SidebarOptionContainer
       onClick={addChannelOption ? addChannel : setChannel}
@@ -44,4 +79,7 @@ const SidebarOptionContainer = styled.div`
   }
 `;
 
-const SidebarOptionChannel = styled.div``;
+const SidebarOptionChannel = styled.h3`
+  padding: 10px 0;
+  font-weight: 300;
+`;

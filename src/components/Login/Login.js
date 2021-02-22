@@ -1,16 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   LoginContainer,
   LoginInnerContainer,
   LoginFormContainer,
   LoginInnerOptionContainer,
 } from "../../styled-components/LoginStyled/LoginStyled";
-import { Button } from "@material-ui/core";
 import { auth, provider } from "../../firebase";
 
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
+  const [name, setName] = useState();
 
   const login = (e) => {
     e.preventDefault();
@@ -25,9 +25,20 @@ const Login = () => {
   const signup = (e) => {
     e.preventDefault();
     auth
-      .signUpWithEmailAndPassword(
+      .createUserWithEmailAndPassword(
         emailRef.current.value,
         passwordRef.current.value
+      )
+      .then(() =>
+        auth.onAuthStateChanged((userAuth) => {
+          if (userAuth) {
+            userAuth.updateProfile({
+              displayName: name,
+              photoURL:
+                "https://modrika.com/wp-content/uploads/avatars/1560/1560-bpfull.jpg",
+            });
+          }
+        })
       )
       .catch((error) => alert(error.message));
   };
@@ -84,6 +95,12 @@ const Login = () => {
           </div>
         </div>
         <LoginFormContainer>
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            placeholder="Full Name"
+          />
           <input ref={emailRef} type="email" placeholder="Email" />
           <input ref={passwordRef} type="password" placeholder="Password" />
           <button onClick={login}>Sign In</button>

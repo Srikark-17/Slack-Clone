@@ -124,6 +124,7 @@ const LoginFormContainer = styled.div`
     width: 140%;
     border-radius: 4px;
     align-self: center;
+    cursor: pointer;
   }
 `;
 

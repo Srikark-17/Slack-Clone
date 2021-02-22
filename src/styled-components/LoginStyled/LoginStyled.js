@@ -41,6 +41,7 @@ const LoginInnerContainer = styled.div`
     margin-right: auto;
     margin-left: auto;
     margin-top: 20px;
+    cursor: pointer;
   }
   > button > svg {
     margin-right: 12px;

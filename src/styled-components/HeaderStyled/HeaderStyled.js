@@ -26,7 +26,6 @@ const HeaderLeft = styled.div`
 `;
 
 const HeaderAvatar = styled(Avatar)`
-  cursor: pointer;
   margin-right: 20px;
   z-index: -1;
   position: "absolute";
@@ -74,6 +73,11 @@ const HeaderRight = styled.div`
     display: "flex";
     flex-direction: "row";
     justify-content: "flex-end";
+    width: 3.7rem;
+    cursor: pointer;
+    :hover {
+      opacity: 0.8;
+    }
   }
 
   > div > svg {

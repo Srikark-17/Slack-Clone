@@ -27,12 +27,13 @@ const Header = () => {
       </HeaderSearch>
       <HeaderRight>
         <HelpOutlineIcon />
-        <div>
-          <HeaderAvatar
-            onClick={() => auth.signOut()}
-            src={user?.photoURL}
-            alt={user?.displayName}
-          />
+        <div onClick={() => auth.signOut()}>
+          {user.photoURL ? (
+            <HeaderAvatar src={user?.photoURL} alt={user?.displayName} />
+          ) : (
+            <HeaderAvatar />
+          )}
+
           <FiberManualRecordIcon />
         </div>
       </HeaderRight>

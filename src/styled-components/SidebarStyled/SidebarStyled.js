@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const SidebarContainer = styled.div`
   color: white;
-  flex: 0.3;
+  flex: 0.2;
   border-top: 1px solid #49264b;
   max-width: 260px;
-  margin-top: 60px;
+  margin-top: 40px;
   background-color: var(--slack-color);
 
   > hr {

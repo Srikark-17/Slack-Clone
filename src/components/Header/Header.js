@@ -28,12 +28,7 @@ const Header = () => {
       <HeaderRight>
         <HelpOutlineIcon />
         <div onClick={() => auth.signOut()}>
-          {user.photoURL ? (
-            <HeaderAvatar src={user?.photoURL} alt={user?.displayName} />
-          ) : (
-            <HeaderAvatar />
-          )}
-
+          <img src={user?.photoURL} alt={user?.displayName} />
           <FiberManualRecordIcon />
         </div>
       </HeaderRight>

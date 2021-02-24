@@ -2,7 +2,6 @@ import React from "react";
 import {
   HeaderContainer,
   HeaderLeft,
-  HeaderAvatar,
   HeaderSearch,
   HeaderRight,
 } from "../../styled-components/HeaderStyled/HeaderStyled";

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Avatar } from "@material-ui/core";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -23,8 +22,6 @@ const HeaderLeft = styled.div`
     cursor: pointer;
   }
 `;
-
-const HeaderAvatar = styled(Avatar)``;
 
 const HeaderSearch = styled.div`
   flex: 0.4;
@@ -97,4 +94,4 @@ const HeaderRight = styled.div`
   }
 `;
 
-export { HeaderContainer, HeaderLeft, HeaderAvatar, HeaderSearch, HeaderRight };
+export { HeaderContainer, HeaderLeft, HeaderSearch, HeaderRight };

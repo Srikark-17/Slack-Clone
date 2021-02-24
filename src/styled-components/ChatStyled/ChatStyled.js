@@ -4,23 +4,24 @@ const ChatContainer = styled.div`
   flex: 0.7;
   flex-grow: 1;
   overflow-y: scroll;
-  margin-top: 60px;
+  margin-top: 55px;
 `;
 
 const Header = styled.div`
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  border-bottom: 1px solid #d3d3d3;
-  position: fixed;
-  background-color: #fff;
+  position: sticky;
+  top: 0;
   width: 100%;
+  background-color: white;
+  justify-content: space-between;
+  padding: 0px 10px 10px 20px;
+  border-bottom: 1px solid #d3d3d3;
+  align-items: center;
 `;
 
 const HeaderLeft = styled.div`
   display: flex;
-  align-items: center;
-
+  flex-direction: column;
   > h4 {
     display: flex;
     text-transform: lowercase;
@@ -30,6 +31,17 @@ const HeaderLeft = styled.div`
     margin-left: 10px;
     font-size: 18px;
     cursor: pointer;
+    color: #1d1c1d !important;
+    opacity: 0.7 !important;
+  }
+  > div {
+    font-size: 13px;
+    color: #1d1c1d;
+    font-weight: 400;
+    :hover {
+      color: #0645ad;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -37,27 +49,19 @@ const HeaderRight = styled.div`
   > p {
     display: flex;
     align-items: center;
-    font-size: 14px;
   }
 
-  > p > svg {
-    margin-right: 5px !important;
-    font-size: 16px;
+  > p > div > svg {
+    margin-right: 40px !important;
+    font-size: 24px;
     cursor: pointer;
+    color: #1d1c1d !important;
+    opacity: 0.7 !important;
   }
 `;
-
-const ChatMessages = styled.div``;
 
 const ChatBottom = styled.div`
   padding-bottom: 200px;
 `;
 
-export {
-  ChatContainer,
-  Header,
-  HeaderLeft,
-  HeaderRight,
-  ChatMessages,
-  ChatBottom,
-};
+export { ChatContainer, Header, HeaderLeft, HeaderRight, ChatBottom };

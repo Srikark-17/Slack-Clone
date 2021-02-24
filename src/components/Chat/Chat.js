@@ -26,7 +26,7 @@ const Chat = () => {
     roomId && db.collection("rooms").doc(roomId)
   );
 
-  const channelTopic = roomDetails?.data().channelTopic;
+  const channelTopic = roomDetails?.data()?.channelTopic;
 
   const [roomMessages, loading] = useCollection(
     roomId &&

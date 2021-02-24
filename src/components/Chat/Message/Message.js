@@ -12,7 +12,7 @@ const Message = ({ message, timestamp, user, userImage }) => {
         <h4>
           {user}{" "}
           <span className="message__timestamp">
-            {new Date(timestamp?.toDate()).toLocaleTimeString()}
+            {new Date(timestamp?.toDate()).toLocaleString()}
           </span>
         </h4>
         <p>{message}</p>

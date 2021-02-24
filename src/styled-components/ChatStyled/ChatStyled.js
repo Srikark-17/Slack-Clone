@@ -14,7 +14,7 @@ const Header = styled.div`
   width: 100%;
   background-color: white;
   justify-content: space-between;
-  padding: 0px 10px 10px 20px;
+  padding: 0px 10px 7px 20px;
   border-bottom: 1px solid #d3d3d3;
   align-items: center;
 `;
@@ -27,6 +27,7 @@ const HeaderLeft = styled.div`
     text-transform: lowercase;
     margin-right: 10px;
     cursor: default;
+    margin-bottom: 5px;
   }
   > h4 > svg {
     margin-left: 10px;

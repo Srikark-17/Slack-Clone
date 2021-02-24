@@ -5,6 +5,8 @@ import {
   HeaderLeft,
   HeaderRight,
   ChatBottom,
+  ChatTopic,
+  ChatTopicDisabled,
 } from "../../styled-components/ChatStyled/ChatStyled";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import StarBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined";
@@ -17,16 +19,14 @@ import { db } from "../../firebase";
 import Message from "./Message/Message";
 import Swal from "sweetalert2";
 
-// if there's no topic from firestore
-// allow user to add topic for the channel
-// else it shouldn't be editable
-
 const Chat = () => {
   const chatRef = useRef(null);
   const roomId = useSelector(selectRoomId);
   const [roomDetails] = useDocument(
     roomId && db.collection("rooms").doc(roomId)
   );
+
+  const channelTopic = roomDetails?.data().channelTopic;
 
   const [roomMessages, loading] = useCollection(
     roomId &&
@@ -44,8 +44,19 @@ const Chat = () => {
       input: "text",
       showCancelButton: true,
     }).then((topic) => {
-      console.log(topic.value);
+      if (topic.value) {
+        db.collection("rooms").doc(roomId).set(
+          {
+            channelTopic: topic.value,
+          },
+          { merge: true }
+        );
+      }
     });
+  };
+
+  const truncate = (string, n) => {
+    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   };
 
   useEffect(() => {
@@ -64,7 +75,13 @@ const Chat = () => {
                 <strong>#{roomDetails?.data().name}</strong>
                 <StarBorderOutlinedIcon />
               </h4>
-              <div onClick={addTopic}>Add a topic</div>
+              {channelTopic ? (
+                <ChatTopicDisabled>
+                  {truncate(channelTopic, 60)}
+                </ChatTopicDisabled>
+              ) : (
+                <ChatTopic onClick={addTopic}>Add a topic</ChatTopic>
+              )}
             </HeaderLeft>
             <HeaderRight>
               <p>

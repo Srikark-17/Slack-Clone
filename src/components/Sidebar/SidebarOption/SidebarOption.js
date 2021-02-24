@@ -27,8 +27,6 @@ const SidebarOption = ({ Icon, title, addChannelOption, id }) => {
           `The channel ${channelName.value} is now created!`,
           "success"
         );
-      } else {
-        Swal.fire("Error", "You did not enter the channel name", "error");
       }
     });
   };

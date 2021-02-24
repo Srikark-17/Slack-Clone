@@ -26,6 +26,7 @@ const HeaderLeft = styled.div`
     display: flex;
     text-transform: lowercase;
     margin-right: 10px;
+    cursor: default;
   }
   > h4 > svg {
     margin-left: 10px;
@@ -34,15 +35,23 @@ const HeaderLeft = styled.div`
     color: #1d1c1d !important;
     opacity: 0.7 !important;
   }
-  > div {
-    font-size: 13px;
-    color: #1d1c1d;
-    font-weight: 400;
-    :hover {
-      color: #0645ad;
-      cursor: pointer;
-    }
+`;
+
+const ChatTopic = styled.h5`
+  font-size: 13px;
+  color: #1d1c1d;
+  font-weight: 400;
+  :hover {
+    color: #0645ad;
+    cursor: pointer;
   }
+`;
+
+const ChatTopicDisabled = styled.h5`
+  font-size: 13px;
+  color: #1d1c1d;
+  font-weight: 400;
+  cursor: default;
 `;
 
 const HeaderRight = styled.div`
@@ -64,4 +73,12 @@ const ChatBottom = styled.div`
   padding-bottom: 200px;
 `;
 
-export { ChatContainer, Header, HeaderLeft, HeaderRight, ChatBottom };
+export {
+  ChatContainer,
+  Header,
+  HeaderLeft,
+  HeaderRight,
+  ChatTopic,
+  ChatTopicDisabled,
+  ChatBottom,
+};

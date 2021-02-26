@@ -4,10 +4,15 @@ const MessageContainer = styled.div`
   display: flex;
   align-items: center;
   z-index: -1;
-  padding: 20px;
+  margin-top: 5px;
+  padding: 15px 20px 15px 20px;
   > img {
     height: 50px;
     border-radius: 8px;
+  }
+  :hover {
+    background-color: #f8f8f8;
+    cursor: pointer;
   }
 `;
 

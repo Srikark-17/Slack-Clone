@@ -87,7 +87,7 @@ const HeaderRight = styled.div`
     z-index: 999;
     right: 1rem;
     position: absolute;
-    top: 1.5rem;
+    top: 1.4rem;
     color: #2bac76;
     width: 1rem !important;
     height: 1rem !important;
